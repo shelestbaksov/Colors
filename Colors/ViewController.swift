@@ -7,24 +7,24 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
-    @IBOutlet var colorView: UIView!
+    @IBOutlet private var colorView: UIView!
     
-    @IBOutlet var redLabel: UILabel!
-    @IBOutlet var greenLabel: UILabel!
-    @IBOutlet var blueLabel: UILabel!
+    @IBOutlet private var redLabel: UILabel!
+    @IBOutlet private var greenLabel: UILabel!
+    @IBOutlet private var blueLabel: UILabel!
     
-    @IBOutlet var redSlider: UISlider!
-    @IBOutlet var greenSlider: UISlider!
-    @IBOutlet var blueSlider: UISlider!
+    @IBOutlet private var redSlider: UISlider!
+    @IBOutlet private var greenSlider: UISlider!
+    @IBOutlet private var blueSlider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         colorView.layer.cornerRadius = 10
     }
 
-    func changeColor() {
+    private func changeColor() {
         colorView.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),
             green: CGFloat(greenSlider.value),
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         )
     }
     
-    @IBAction func rgbSliderChanged(_ sender: Any) {
+    @IBAction private func rgbSliderChanged(_ sender: Any) {
         redLabel.text = String(format:"%.1f", redSlider.value)
         greenLabel.text = String(format:"%.1f", greenSlider.value)
         blueLabel.text = String(format:"%.1f", blueSlider.value)
